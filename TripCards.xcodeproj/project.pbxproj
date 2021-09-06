@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A6B71B2D26E646D200479711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B2C26E646D200479711 /* AppDelegate.swift */; };
 		A6B71B2F26E646D200479711 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B2E26E646D200479711 /* SceneDelegate.swift */; };
-		A6B71B3126E646D200479711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B3026E646D200479711 /* ViewController.swift */; };
+		A6B71B3126E646D200479711 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B3026E646D200479711 /* TripViewController.swift */; };
 		A6B71B3426E646D200479711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B71B3226E646D200479711 /* Main.storyboard */; };
 		A6B71B3626E646D300479711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B71B3526E646D300479711 /* Assets.xcassets */; };
 		A6B71B3926E646D300479711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B71B3726E646D300479711 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		A6B71B2926E646D200479711 /* TripCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B71B2C26E646D200479711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B71B2E26E646D200479711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A6B71B3026E646D200479711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6B71B3026E646D200479711 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		A6B71B3326E646D200479711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6B71B3526E646D300479711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6B71B3826E646D300479711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,55 @@
 		A6B71B2B26E646D200479711 /* TripCards */ = {
 			isa = PBXGroup;
 			children = (
-				A6B71B2C26E646D200479711 /* AppDelegate.swift */,
-				A6B71B2E26E646D200479711 /* SceneDelegate.swift */,
-				A6B71B3026E646D200479711 /* ViewController.swift */,
-				A6B71B3226E646D200479711 /* Main.storyboard */,
-				A6B71B3526E646D300479711 /* Assets.xcassets */,
-				A6B71B3726E646D300479711 /* LaunchScreen.storyboard */,
+				A6B71B4426E646FB00479711 /* Model */,
+				A6B71B4326E646F500479711 /* Custom Cell */,
+				A6B71B4226E646EE00479711 /* Controllers */,
+				A6B71B4126E646E900479711 /* Views */,
+				A6B71B4026E646DE00479711 /* Supporting Files */,
 				A6B71B3A26E646D300479711 /* Info.plist */,
 			);
 			path = TripCards;
+			sourceTree = "<group>";
+		};
+		A6B71B4026E646DE00479711 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6B71B2C26E646D200479711 /* AppDelegate.swift */,
+				A6B71B2E26E646D200479711 /* SceneDelegate.swift */,
+				A6B71B3526E646D300479711 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6B71B4126E646E900479711 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6B71B3226E646D200479711 /* Main.storyboard */,
+				A6B71B3726E646D300479711 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A6B71B4226E646EE00479711 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6B71B3026E646D200479711 /* TripViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A6B71B4326E646F500479711 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		A6B71B4426E646FB00479711 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B71B3126E646D200479711 /* ViewController.swift in Sources */,
+				A6B71B3126E646D200479711 /* TripViewController.swift in Sources */,
 				A6B71B2D26E646D200479711 /* AppDelegate.swift in Sources */,
 				A6B71B2F26E646D200479711 /* SceneDelegate.swift in Sources */,
 			);
