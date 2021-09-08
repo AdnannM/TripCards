@@ -14,62 +14,14 @@ class TripViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var trips = [
-        Trip(tripID: "Paris001",
-             city: "Paris",
-             country: "France",
-             featureImage: UIImage(named: "paris"),
-             price: 200,
-             totalDays: 5,
-             isLiked: false),
-        Trip(tripID: "Instablu001",
-             city: "Instanbul",
-             country: "Turkey",
-             featureImage: UIImage(named: "istanbul"),
-             price: 999,
-             totalDays: 10,
-             isLiked: false),
-        Trip(tripID: "London001",
-             city: "London",
-             country: "United Kingdom",
-             featureImage: UIImage(named: "london"),
-             price: 699,
-             totalDays: 4,
-             isLiked: false),
-        Trip(tripID: "Rome001",
-             city: "Rome",
-             country: "Italy",
-             featureImage: UIImage(named: "rome"),
-             price: 299,
-             totalDays: 6,
-             isLiked: false),
-        Trip(tripID: "Syndney001",
-             city: "Syndney",
-             country: "Austalia",
-             featureImage: UIImage(named: "sydney"),
-             price: 2999,
-             totalDays: 11,
-             isLiked: false),
-        Trip(tripID: "Zurich001",
-             city: "Zurich",
-             country: "Switzerland",
-             featureImage: UIImage(named: "zurich"),
-             price: 1099,
-             totalDays: 8,
-             isLiked: false),
-        Trip(tripID: "NewYork001",
-             city: "New York",
-             country: "United States",
-             featureImage: UIImage(named: "newyork"),
-             price: 3499,
-             totalDays: 14,
-             isLiked: false),
-        Trip(tripID: "Santorini001",
-             city: "Santorini",
-             country: "Greece",
-             featureImage: UIImage(named: "santorini"),
-             price: 1099,
-             totalDays: 8,
-             isLiked: false),
+        Trip(tripID: "Paris001", city: "Paris", country: "France", featureImage: UIImage(named: "paris"), price: 2000, totalDays: 5, isLiked: false),
+        Trip(tripID: "Rome001", city: "Rome", country: "Italy", featureImage: UIImage(named: "rome"), price: 800, totalDays: 3, isLiked: false),
+        Trip(tripID: "Istanbul001", city: "Istanbul", country: "Turkey", featureImage: UIImage(named: "istanbul"), price: 2200, totalDays: 10, isLiked: false),
+        Trip(tripID: "London001", city: "London", country: "United Kingdom", featureImage: UIImage(named: "london"), price: 3000, totalDays: 4, isLiked: false),
+        Trip(tripID: "Sydney001", city: "Sydney", country: "Australia", featureImage: UIImage(named: "sydney"), price: 2500, totalDays: 8, isLiked: false),
+        Trip(tripID: "Santorini001", city: "Santorini", country: "Greece", featureImage: UIImage(named: "santorini"), price: 1800, totalDays: 7, isLiked: false),
+        Trip(tripID: "NewYork001", city: "New York", country: "United States", featureImage: UIImage(named: "newyork"), price: 900, totalDays: 3, isLiked: false),
+        Trip(tripID: "Kyoto001", city: "Kyoto", country: "Japan", featureImage: UIImage(named: "kyoto"), price: 1000, totalDays: 5, isLiked: false)
     ]
     
     enum Section {
@@ -155,7 +107,7 @@ extension TripViewController {
                                                        subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
+        section.orthogonalScrollingBehavior = .paging
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         

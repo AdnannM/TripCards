@@ -34,6 +34,15 @@ class TripCollectionViewCell: UICollectionViewCell {
         }
     }
     @IBAction func likeButtonPressed(_ sender: Any) {
-        delegate?.didTapLikeButton(cell: self)
+        UIView.animate(withDuration: 0.1, animations: {
+          self.transform = self.transform.scaledBy(x: 0.8, y: 0.8)
+        }, completion: { _ in
+          // Step 2
+          UIView.animate(withDuration: 0.1, animations: {
+            self.transform = CGAffineTransform.identity
+          })
+            self.delegate?.didTapLikeButton(cell: self)
+        })
     }
 }
+
