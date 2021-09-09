@@ -101,14 +101,25 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAJ-Bg-cDM">
+                                                    <rect key="frame" x="260.33333333333331" y="22" width="29.666666666666686" height="28.333333333333329"/>
+                                                    <state key="normal" image="trash.circle" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="trashButtonPressed:" destination="QCQ-sx-PHk" eventType="touchUpInside" id="XBK-ii-qSH"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="oK8-5R-3Gb" secondAttribute="trailing" id="91J-Ys-Uxu"/>
                                                 <constraint firstItem="UDw-U9-6Bf" firstAttribute="top" secondItem="6z0-Re-uIL" secondAttribute="top" id="9wG-Ht-iZv"/>
+                                                <constraint firstItem="rAJ-Bg-cDM" firstAttribute="top" secondItem="6z0-Re-uIL" secondAttribute="top" constant="22" id="GhH-Fe-9qt"/>
                                                 <constraint firstItem="TNx-eo-dmJ" firstAttribute="top" secondItem="6z0-Re-uIL" secondAttribute="top" constant="48" id="Jiz-ws-f0Y"/>
                                                 <constraint firstItem="UDw-U9-6Bf" firstAttribute="leading" secondItem="6z0-Re-uIL" secondAttribute="leading" id="KFW-m4-Pkn"/>
                                                 <constraint firstItem="UDw-U9-6Bf" firstAttribute="height" secondItem="oK8-5R-3Gb" secondAttribute="height" multiplier="4.5" id="OJn-Sv-8yA"/>
                                                 <constraint firstAttribute="trailing" secondItem="UDw-U9-6Bf" secondAttribute="trailing" id="Pxt-vj-eTE"/>
+                                                <constraint firstAttribute="trailing" secondItem="rAJ-Bg-cDM" secondAttribute="trailing" constant="10" id="Tip-CL-zcg"/>
                                                 <constraint firstItem="oK8-5R-3Gb" firstAttribute="top" secondItem="TNx-eo-dmJ" secondAttribute="bottom" constant="116" id="XR7-XM-bSI"/>
                                                 <constraint firstAttribute="bottom" secondItem="UDw-U9-6Bf" secondAttribute="bottom" id="aPk-Bn-F8e"/>
                                                 <constraint firstAttribute="bottom" secondItem="oK8-5R-3Gb" secondAttribute="bottom" id="e5E-Ru-Zkx"/>
@@ -144,6 +155,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nt1-dQ-ZPH">
+                                <rect key="frame" x="344.66666666666669" y="71" width="35.333333333333314" height="34"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.up.arrow.down.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFS-zX-07Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -161,6 +182,8 @@
                             <constraint firstAttribute="bottom" secondItem="7bo-LN-sdJ" secondAttribute="bottom" id="cAJ-jx-NXm"/>
                             <constraint firstAttribute="trailing" secondItem="7bo-LN-sdJ" secondAttribute="trailing" id="gtx-ET-0HT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EVs-2c-uMv" secondAttribute="bottom" constant="30" id="lkr-b2-9u8"/>
+                            <constraint firstItem="Nt1-dQ-ZPH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="mgW-lH-PYk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nt1-dQ-ZPH" secondAttribute="trailing" constant="10" id="qSs-Us-cD8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -174,7 +197,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.arrow.down.circle" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="trash.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

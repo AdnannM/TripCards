@@ -11,6 +11,7 @@ import UIKit
 
 protocol TripCollectionViewCellDelegate {
     func didTapLikeButton(cell: TripCollectionViewCell)
+    func didTapTrashButton(cell: TripCollectionViewCell)
 }
 
 class TripCollectionViewCell: UICollectionViewCell {
@@ -43,6 +44,10 @@ class TripCollectionViewCell: UICollectionViewCell {
           })
             self.delegate?.didTapLikeButton(cell: self)
         })
+    }
+    
+    @IBAction func trashButtonPressed(_ sender: Any) {
+        delegate?.didTapTrashButton(cell: self)
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class TripViewController: UIViewController {
     
@@ -13,16 +14,7 @@ class TripViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var trips = [
-        Trip(tripID: "Paris001", city: "Paris", country: "France", featureImage: UIImage(named: "paris"), price: 2000, totalDays: 5, isLiked: false),
-        Trip(tripID: "Rome001", city: "Rome", country: "Italy", featureImage: UIImage(named: "rome"), price: 800, totalDays: 3, isLiked: false),
-        Trip(tripID: "Istanbul001", city: "Istanbul", country: "Turkey", featureImage: UIImage(named: "istanbul"), price: 2200, totalDays: 10, isLiked: false),
-        Trip(tripID: "London001", city: "London", country: "United Kingdom", featureImage: UIImage(named: "london"), price: 3000, totalDays: 4, isLiked: false),
-        Trip(tripID: "Sydney001", city: "Sydney", country: "Australia", featureImage: UIImage(named: "sydney"), price: 2500, totalDays: 8, isLiked: false),
-        Trip(tripID: "Santorini001", city: "Santorini", country: "Greece", featureImage: UIImage(named: "santorini"), price: 1800, totalDays: 7, isLiked: false),
-        Trip(tripID: "NewYork001", city: "New York", country: "United States", featureImage: UIImage(named: "newyork"), price: 900, totalDays: 3, isLiked: false),
-        Trip(tripID: "Kyoto001", city: "Kyoto", country: "Japan", featureImage: UIImage(named: "kyoto"), price: 1000, totalDays: 5, isLiked: false)
-    ]
+    private var trips = [Trip]()
     
     enum Section {
         case all
@@ -40,6 +32,7 @@ class TripViewController: UIViewController {
         collectionView.backgroundColor = .clear
         
         updateSnapshot()
+        loadTripFromParse()
     }
     
 }
@@ -68,9 +61,22 @@ extension TripViewController {
             if let trip = self.dataSource.itemIdentifier(for: indexPath) {
                 cell.cityLabel.text = trip.city
                 cell.countryLabel.text = trip.country
-                cell.daysLabel.text = "\(trip.totalDays) Days"
+                cell.daysLabel.text = "\(trip.numberOfDays) Days"
                 cell.priceLabel.text = "\(trip.price)$"
-                cell.imageView.image = trip.featureImage
+                
+                // Load Image in Background
+                cell.imageView.image = UIImage()
+                if let featuredImage = trip.featuredImage {
+                    featuredImage.getDataInBackground { imageData, error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                        if let tripImageData = imageData {
+                            cell.imageView.image = UIImage(data: tripImageData)
+                        }
+                    }
+                }
             }
             
             // Add rounded corner
@@ -122,6 +128,71 @@ extension TripViewController: TripCollectionViewCellDelegate {
             trips[indexPath.row].isLiked = trips[indexPath.row].isLiked ? false : true
             cell.isLiked = trips[indexPath.row].isLiked
             
+            // Update date Parse
+            trips[indexPath.row].toPFObject().saveInBackground { success, error in
+                if (success) {
+                    print("Successefully update the Trip")
+                } else {
+                    print("Error: \(error?.localizedDescription ?? "Unknow error")")
+                }
+            }
         }
+    }
+    
+    func didTapTrashButton(cell: TripCollectionViewCell) {
+        guard let indexPath = collectionView.indexPath(for: cell) else {
+            return
+        }
+        
+        guard let selectedTrip = self.dataSource.itemIdentifier(for: indexPath) else {
+            return
+        }
+        
+        // Delete Trip
+        trips[indexPath.row].toPFObject().deleteInBackground { success, error in
+            if (success) {
+                var snapshot = self.dataSource.snapshot()
+                snapshot.deleteItems([selectedTrip])
+                self.dataSource.apply(snapshot)
+            } else {
+                print("Error: \(error?.localizedDescription ?? "Unknow error")")
+                return
+            }
+        }
+    }
+}
+
+// MARK: - Load Parse Items
+extension TripViewController {
+    func loadTripFromParse() {
+        // Clear array
+        trips.removeAll(keepingCapacity: true)
+        
+        // Pull data from Parse
+        let query = PFQuery(className: "Trip")
+        // Chache Image
+        query.cachePolicy = PFCachePolicy.cacheElseNetwork
+        query.findObjectsInBackground { (objects, error) -> Void in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let objects = objects {
+                objects.forEach { object in
+                    // Convert PFObject into Trip object
+                    let trip = Trip(pfObject: object)
+                    self.trips.append(trip)
+                }
+            }
+            self.updateSnapshot()
+        }
+    }
+}
+
+// MARK: - Refresh Parse
+extension TripViewController {
+    @IBAction func reloadButtonPressed(sender: Any) {
+        loadTripFromParse()
     }
 }

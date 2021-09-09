@@ -15,9 +15,12 @@
 		A6B71B3926E646D300479711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B71B3726E646D300479711 /* LaunchScreen.storyboard */; };
 		A6B71B4626E75F9300479711 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B4526E75F9300479711 /* TripCollectionViewCell.swift */; };
 		A6B71B4A26E7654900479711 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B4926E7654900479711 /* Trip.swift */; };
+		BEFC3B267F5BAF9FAE8DAD96 /* Pods_TripCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC2BF226C600A4C4DA4780B /* Pods_TripCards.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EC2BF226C600A4C4DA4780B /* Pods_TripCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		451BC7CCC5A49B314E8E0F51 /* Pods-TripCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripCards.debug.xcconfig"; path = "Target Support Files/Pods-TripCards/Pods-TripCards.debug.xcconfig"; sourceTree = "<group>"; };
 		A6B71B2926E646D200479711 /* TripCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B71B2C26E646D200479711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B71B2E26E646D200479711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		A6B71B3A26E646D300479711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6B71B4526E75F9300479711 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6B71B4926E7654900479711 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		C4B13525E1FA12F49595EE77 /* Pods-TripCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripCards.release.xcconfig"; path = "Target Support Files/Pods-TripCards/Pods-TripCards.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFC3B267F5BAF9FAE8DAD96 /* Pods_TripCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502C17EDCF49E1B75AB52033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EC2BF226C600A4C4DA4780B /* Pods_TripCards.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59E0EF78929F6E1BC9CD85B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				451BC7CCC5A49B314E8E0F51 /* Pods-TripCards.debug.xcconfig */,
+				C4B13525E1FA12F49595EE77 /* Pods-TripCards.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A6B71B2026E646D200479711 = {
 			isa = PBXGroup;
 			children = (
 				A6B71B2B26E646D200479711 /* TripCards */,
 				A6B71B2A26E646D200479711 /* Products */,
+				59E0EF78929F6E1BC9CD85B3 /* Pods */,
+				502C17EDCF49E1B75AB52033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6B71B3D26E646D300479711 /* Build configuration list for PBXNativeTarget "TripCards" */;
 			buildPhases = (
+				CBF8298A01CB183446AF4A29 /* [CP] Check Pods Manifest.lock */,
 				A6B71B2526E646D200479711 /* Sources */,
 				A6B71B2626E646D200479711 /* Frameworks */,
 				A6B71B2726E646D200479711 /* Resources */,
+				062E07AC4FAEF4F8BF015A02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		062E07AC4FAEF4F8BF015A02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripCards/Pods-TripCards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripCards/Pods-TripCards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TripCards/Pods-TripCards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBF8298A01CB183446AF4A29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripCards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6B71B2526E646D200479711 /* Sources */ = {
@@ -331,6 +400,7 @@
 		};
 		A6B71B3E26E646D300479711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 451BC7CCC5A49B314E8E0F51 /* Pods-TripCards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -350,6 +420,7 @@
 		};
 		A6B71B3F26E646D300479711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4B13525E1FA12F49595EE77 /* Pods-TripCards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
