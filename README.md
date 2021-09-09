@@ -7,7 +7,7 @@
 - Handling Like Button
 - Working with Parse as Mobile Backend
 - Creating Parse
-- Connecting wiht Parse
+- Connecting with Parse
 - Retriving Data from Parse
 - Refreshing Data
 - Caching Image for Speed and Offline Access
