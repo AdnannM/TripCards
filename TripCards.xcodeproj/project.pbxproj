@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		A6B71B3926E646D300479711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B71B3726E646D300479711 /* LaunchScreen.storyboard */; };
 		A6B71B4626E75F9300479711 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B4526E75F9300479711 /* TripCollectionViewCell.swift */; };
 		A6B71B4A26E7654900479711 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B71B4926E7654900479711 /* Trip.swift */; };
+		A6FD3EB926EB5E4B00B6D6BF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FD3EB826EB5E4B00B6D6BF /* LoginViewController.swift */; };
+		A6FD3EBB26EBCA7300B6D6BF /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FD3EBA26EBCA7300B6D6BF /* LocalAuthentication.framework */; };
 		BEFC3B267F5BAF9FAE8DAD96 /* Pods_TripCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC2BF226C600A4C4DA4780B /* Pods_TripCards.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		A6B71B3A26E646D300479711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6B71B4526E75F9300479711 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6B71B4926E7654900479711 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		A6FD3EB826EB5E4B00B6D6BF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A6FD3EBA26EBCA7300B6D6BF /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		C4B13525E1FA12F49595EE77 /* Pods-TripCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripCards.release.xcconfig"; path = "Target Support Files/Pods-TripCards/Pods-TripCards.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6FD3EBB26EBCA7300B6D6BF /* LocalAuthentication.framework in Frameworks */,
 				BEFC3B267F5BAF9FAE8DAD96 /* Pods_TripCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +54,7 @@
 		502C17EDCF49E1B75AB52033 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6FD3EBA26EBCA7300B6D6BF /* LocalAuthentication.framework */,
 				1EC2BF226C600A4C4DA4780B /* Pods_TripCards.framework */,
 			);
 			name = Frameworks;
@@ -60,7 +66,6 @@
 				451BC7CCC5A49B314E8E0F51 /* Pods-TripCards.debug.xcconfig */,
 				C4B13525E1FA12F49595EE77 /* Pods-TripCards.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B71B3026E646D200479711 /* TripViewController.swift */,
+				A6FD3EB826EB5E4B00B6D6BF /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6FD3EB926EB5E4B00B6D6BF /* LoginViewController.swift in Sources */,
 				A6B71B4A26E7654900479711 /* Trip.swift in Sources */,
 				A6B71B3126E646D200479711 /* TripViewController.swift in Sources */,
 				A6B71B4626E75F9300479711 /* TripCollectionViewCell.swift in Sources */,
