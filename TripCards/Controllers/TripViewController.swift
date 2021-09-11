@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import ViewAnimator
 
 class TripViewController: UIViewController {
     
@@ -33,6 +34,16 @@ class TripViewController: UIViewController {
         
         updateSnapshot()
         loadTripFromParse()
+    }
+    
+    // AnimateView
+    private func animateView() {
+        let animations: [Animation] = [
+                   AnimationType.from(direction: .bottom, offset: 300),
+                   AnimationType.rotate(angle: .pi / 4),
+                   AnimationType.zoom(scale: 3)
+            ]
+        UIView.animate(views: collectionView.visibleCells, animations: animations, duration: 1)
     }
     
 }

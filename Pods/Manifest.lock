@@ -4,19 +4,23 @@ PODS:
     - Parse/Core (= 1.19.2)
   - Parse/Core (1.19.2):
     - Bolts/Tasks (= 1.9.1)
+  - ViewAnimator (3.1.0)
 
 DEPENDENCIES:
   - Parse
+  - ViewAnimator
 
 SPEC REPOS:
   trunk:
     - Bolts
     - Parse
+    - ViewAnimator
 
 SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
 
-PODFILE CHECKSUM: 86748f004bff6edf25e009db0aa0f5ccbd0c3708
+PODFILE CHECKSUM: 8668d0ba9f750f55ba1ddca46f0d43002e28d143
 
 COCOAPODS: 1.10.1

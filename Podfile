@@ -7,4 +7,6 @@ target 'TripCards' do
 
   # Pods for TripCards
 	pod 'Parse'
+	pod "ViewAnimator"
+
 end
