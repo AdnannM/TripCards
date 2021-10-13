@@ -1,4 +1,4 @@
-# TripCards
+# TripCards - Carousel-Like User Interface with Paging Support -
 
 - Carousel-Like User Interface with Paging Support
 - Custom Cell For CollectionView
